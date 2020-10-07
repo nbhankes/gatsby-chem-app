@@ -15,7 +15,7 @@
 html {
   font-size: 16px;
   width: var(--page-width);
-  margin: 9rem auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
 body {

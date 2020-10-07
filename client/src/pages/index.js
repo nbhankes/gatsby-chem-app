@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import CFactorForm from "../components/cfForm/cfactorform"
 import CFacQuery from "../components/cfCardAndContainer/cfacquery"
 import CalcContainer from "../components/CalcContainer/calccontainer"
-import Nav from "../components/Nav/nav"
 
 import { ApolloClient, InMemoryCache } from "@apollo/client"
 import { ApolloProvider } from "@apollo/client"
@@ -46,7 +45,7 @@ const IndexPage = ({ data }) => (
   <ApolloProvider client={client}>
     <Layout>
       <SEO title="Home" />
-      <Nav />
+
       <CFactorForm />
       <CalcContainer />
       <CFacQuery />
