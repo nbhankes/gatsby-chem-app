@@ -1,0 +1,32 @@
+.nav-banner {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  z-index: 9998;
+  display: flex;
+  justify-content: space-around;
+  background: var(--main-white);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-button {
+  text-align: center;
+  padding-top: 0.75rem;
+  height: 3rem;
+  width: 50%;
+  color: var(--nobel-gray);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-bottom: solid;
+  border-bottom-color: var(--statue-gray);
+  border-bottom-width: 0.15rem;
+}
+
+.nav-button:hover {
+  border-bottom-color: var(--twitter-blue);
+  color: var(--twitter-blue);
+  background: var(--light-blue);
+}
