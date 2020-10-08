@@ -1,0 +1,123 @@
+.cfactor-list-container-label {
+  display: flex;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-bottom: solid;
+  border-color: var(--twitter-blue);
+  border-width: 0.15rem;
+  color: var(--main-black);
+  padding: 0.5rem 0.5rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background: var(--light-blue);
+  width: var(--page-width);
+}
+
+.individual-cfactor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  background: var(--main-white);
+  margin: 0 0;
+}
+
+.cfactor-grid-container {
+  display: grid;
+  margin: 0.5rem 0.1rem;
+  background-color: var(--main-white);
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 0fr 1fr 1fr 1fr auto 1fr 1fr 1fr;
+  grid-template-areas:
+    "cfLab cfLab cfLab"
+    "num numE numExp"
+    "numUnit numUnit numUnit"
+    "numComp numComp numComp"
+    "div div div"
+    "denom denomE denomExp"
+    "denomUnit denomUnit denomUnit"
+    "denomComp denomComp denomComp"
+    "cfLib cfLib cfLib";
+}
+
+.cf-label-card {
+  background: red;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.num-card {
+  grid-area: num;
+  margin: auto auto;
+}
+
+.num-E-card {
+  grid-area: numE;
+  margin: auto auto;
+}
+
+.num-exp-card {
+  grid-area: numExp;
+  margin: auto auto;
+}
+
+.num-unit-card {
+  grid-area: numUnit;
+  margin: auto auto;
+}
+
+.num-comp-card {
+  grid-area: numComp;
+  margin: auto auto;
+}
+
+.division-card {
+  height: 0.1rem;
+  background: black;
+  width: 100%;
+  grid-area: div;
+}
+
+.denom-card {
+  grid-area: denom;
+  margin: auto auto;
+}
+
+.denom-E-card {
+  grid-area: denomE;
+  margin: auto auto;
+}
+
+.denom-exp-card {
+  grid-area: denomExp;
+  margin: auto auto;
+}
+
+.denom-unit-card {
+  grid-area: denomUnit;
+  margin: auto auto;
+}
+
+.denom-comp-card {
+  grid-area: denomComp;
+  margin: auto auto;
+}
+
+.cfactor-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cfactor-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 2rem;
+}
+
+.cfactor-card-button:hover {
+  background: var(--twitter-blue);
+}
