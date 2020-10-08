@@ -10,9 +10,12 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header/header"
+<<<<<<< HEAD
 import Nav from "../components/Nav/nav"
 import TopbarSpacer from "../components/TopbarSpacer/topbarspacer"
 //import TopbarContainer from "../components/TopbarContainer/topbarcontainer"
+=======
+>>>>>>> c7b2840b34813efb6f145a90b662cbbada8a19f8
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -29,9 +32,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+<<<<<<< HEAD
       <Nav />
 
       <TopbarSpacer />
+=======
+>>>>>>> c7b2840b34813efb6f145a90b662cbbada8a19f8
       <div
         style={{
           margin: `0 auto`,
