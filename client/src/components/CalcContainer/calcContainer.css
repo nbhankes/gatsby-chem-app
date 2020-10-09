@@ -1,8 +1,29 @@
 .drag-drop-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 14rem;
   width: 100%;
   margin: 1rem auto;
   background: var(--light-blue);
+}
+
+.cfactor-grid-container-drop-target {
+  display: grid;
+  margin: 0.5rem 1rem;
+  padding: 0.1rem 0.25rem;
+  background-color: var(--main-white);
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr auto 1fr 1fr 1fr;
+  grid-template-areas:
+    "num numE numExp"
+    "numUnit numUnit numUnit"
+    "numComp numComp numComp"
+    "div div div"
+    "denom denomE denomExp"
+    "denomUnit denomUnit denomUnit"
+    "denomComp denomComp denomComp";
+  -webkit-box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.75);
 }

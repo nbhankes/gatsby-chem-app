@@ -3,28 +3,12 @@ import { useQuery, useMutation } from "@apollo/client"
 import { GET_CFACTOR } from "../../apiCalls/queries"
 import { DELETE_CFACTOR, REVERSE_CFACTOR } from "../../apiCalls/mutations"
 
-import { FaSyncAlt, FaRegTrashAlt } from "react-icons/fa"
-import { css } from "emotion"
+import { FaRandom, FaRegTrashAlt } from "react-icons/fa"
 import "./cfCard.css"
 
 import CFCardDrag from "./cfCardDrag"
 
 function CFacQuery() {
-  const styles = {
-    button: {
-      height: "3rem",
-      width: "4rem",
-      background: "hsla(94, 38%, 59%, 1)",
-      color: "black",
-      fontSize: "1.25rem",
-      border: "none",
-
-      "&:hover": {
-        background: "green",
-      },
-    },
-  }
-
   const { loading, error, data } = useQuery(GET_CFACTOR)
 
   const [deleteCFactor] = useMutation(DELETE_CFACTOR, {
@@ -66,7 +50,7 @@ function CFacQuery() {
             </div>
             <div className="cfactor-button-container">
               <button
-                className="cfactor-card-button"
+                className="cfactor-card-button delete-button"
                 onClick={() => {
                   deleteCFactor({
                     variables: { id: cfactor.id },
@@ -84,7 +68,7 @@ function CFacQuery() {
                   })
                 }}
               >
-                <FaSyncAlt />
+                <FaRandom />
               </button>
             </div>
           </CFCardDrag>

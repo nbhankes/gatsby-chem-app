@@ -18,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: start;
   background: var(--main-white);
   margin: 0 0;
 }
@@ -42,8 +42,10 @@
 }
 
 .cf-label-card {
-  background: red;
-  color: white;
+  background: var(--statue-gray);
+  color: var(--main-black);
+  font-family: sans-serif;
+  font-weight: bold;
   text-align: center;
   width: 100%;
 }
@@ -112,12 +114,22 @@
 
 .cfactor-card-button {
   display: flex;
+  background: var(--light-blue);
+  border: none;
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 2rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
 }
 
 .cfactor-card-button:hover {
-  background: var(--twitter-blue);
+  background: var(--nobel-gray);
+  color: white;
+  font-size: 1.8rem;
+}
+
+.delete-button:hover {
+  border: solid 3px red;
 }
