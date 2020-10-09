@@ -22,17 +22,33 @@
   width: auto;
   min-height: 2rem;
   grid-area: cfLab;
-  background: #e5e5e5ff;
-  border: solid 0.01rem grey;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   margin-bottom: 0.1rem;
+}
+
+.cf-label:hover {
+  background: var(--light-blue);
 }
 
 .num {
   max-width: 8rem;
   min-height: 2rem;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: num;
   margin: 0.1rem auto;
   text-align: center;
+}
+
+.num:hover {
+  background: var(--light-blue);
 }
 
 .word-one {
@@ -43,6 +59,11 @@
 
 .num-exp {
   grid-area: numExp;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   margin: auto auto;
   margin: 0.1rem auto;
   text-align: center;
@@ -50,24 +71,46 @@
   min-height: 2rem;
 }
 
+.num-exp:hover {
+  background: var(--light-blue);
+}
+
 .num-unit {
   width: auto;
   min-height: 2rem;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: numUnit;
   text-align: center;
   margin-bottom: 0.1rem;
 }
 
+.num-unit:hover {
+  background: var(--light-blue);
+}
+
 .num-comp {
   width: auto;
   min-height: 2rem;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: numComp;
   text-align: center;
 }
 
+.num-comp:hover {
+  background: var(--light-blue);
+}
+
 .division {
   height: 0.2rem;
-  background: #14213dff;
+  background: var(--nobel-gray);
   width: 100%;
   grid-area: div;
   margin-top: 0.1rem;
@@ -76,9 +119,18 @@
 .denom {
   max-width: 8rem;
   min-height: 2rem;
+  background: white;
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: denom;
   margin: auto auto;
   text-align: center;
+}
+
+.denom:hover {
+  background: var(--light-blue);
 }
 
 .word-two {
@@ -90,34 +142,68 @@
 .denom-exp {
   max-width: 8rem;
   min-height: 2rem;
+  background: var(--main-white);
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: denomExp;
   margin: auto auto;
   text-align: center;
 }
 
+.denom-exp:hover {
+  background: var(--light-blue);
+}
+
 .denom-unit {
   width: auto;
   min-height: 2rem;
+  background: var(--main-white);
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   grid-area: denomUnit;
   text-align: center;
   margin-bottom: 0.1rem;
+}
+
+.denom-unit:hover {
+  background: var(--light-blue);
 }
 
 .denom-comp {
   width: auto;
   min-height: 2rem;
   grid-area: denomComp;
+  background: var(--main-white);
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   text-align: center;
   margin-bottom: 0.1rem;
+}
+
+.denom-comp:hover {
+  background: var(--light-blue);
 }
 
 .cf-lib {
   width: auto;
   min-height: 2rem;
   grid-area: cfLib;
-  background: #e5e5e5ff;
-  border: solid 0.01rem grey;
+  background: var(--main-white);
+  border: solid;
+  border-width: 0.01rem;
+  border-color: var(--statue-gray);
+  color: var(--main-black);
   margin-bottom: 0.1rem;
+}
+
+.cf-lib:hover {
+  background: var(--light-blue);
 }
 
 .submit-button {
