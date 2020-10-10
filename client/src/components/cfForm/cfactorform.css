@@ -21,11 +21,12 @@
 .cf-label {
   width: auto;
   min-height: 2rem;
+  border-radius: 5px;
   grid-area: cfLab;
   background: white;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   margin-bottom: 0.1rem;
 }
@@ -38,9 +39,10 @@
   max-width: 8rem;
   min-height: 2rem;
   background: white;
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: num;
   margin: 0.1rem auto;
@@ -60,9 +62,10 @@
 .num-exp {
   grid-area: numExp;
   background: white;
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   margin: auto auto;
   margin: 0.1rem auto;
@@ -79,9 +82,10 @@
   width: auto;
   min-height: 2rem;
   background: white;
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: numUnit;
   text-align: center;
@@ -95,10 +99,11 @@
 .num-comp {
   width: auto;
   min-height: 2rem;
+  border-radius: 5px;
   background: white;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: numComp;
   text-align: center;
@@ -120,9 +125,10 @@
   max-width: 8rem;
   min-height: 2rem;
   background: white;
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: denom;
   margin: auto auto;
@@ -143,9 +149,10 @@
   max-width: 8rem;
   min-height: 2rem;
   background: var(--main-white);
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: denomExp;
   margin: auto auto;
@@ -160,9 +167,10 @@
   width: auto;
   min-height: 2rem;
   background: var(--main-white);
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   grid-area: denomUnit;
   text-align: center;
@@ -176,11 +184,12 @@
 .denom-comp {
   width: auto;
   min-height: 2rem;
+  border-radius: 5px;
   grid-area: denomComp;
   background: var(--main-white);
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   text-align: center;
   margin-bottom: 0.1rem;
@@ -195,9 +204,10 @@
   min-height: 2rem;
   grid-area: cfLib;
   background: var(--main-white);
+  border-radius: 5px;
   border: solid;
   border-width: 0.01rem;
-  border-color: var(--statue-gray);
+  border-color: var(--twitter-blue);
   color: var(--main-black);
   margin-bottom: 0.1rem;
 }
@@ -210,7 +220,7 @@
   width: auto;
   min-height: 3rem;
   grid-area: submit;
-  background: var(--twitter-blue);
+  background: var(--md-blue);
   color: var(--main-white);
   font-family: sans-serif;
   font-size: 1.5rem;
@@ -218,5 +228,5 @@
 }
 
 .submit-button:hover {
-  background: var(--nobel-gray);
+  background: var(--twitter-blue);
 }

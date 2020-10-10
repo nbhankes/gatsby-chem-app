@@ -34,7 +34,7 @@ function CFactorForm() {
     setFormData({ ...formData, [name]: value })
   }
   return (
-    <div>
+    <div id="form-component">
       <form
         id="cfactorForm"
         onSubmit={event => {

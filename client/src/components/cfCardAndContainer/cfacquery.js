@@ -3,7 +3,7 @@ import { useQuery, useMutation } from "@apollo/client"
 import { GET_CFACTOR } from "../../apiCalls/queries"
 import { DELETE_CFACTOR, REVERSE_CFACTOR } from "../../apiCalls/mutations"
 
-import { FaRandom, FaRegTrashAlt } from "react-icons/fa"
+import { BiShuffle, BiTrash } from "react-icons/bi"
 import "./cfCard.css"
 
 import CFCardDrag from "./cfCardDrag"
@@ -57,7 +57,7 @@ function CFacQuery() {
                   })
                 }}
               >
-                <FaRegTrashAlt />
+                <BiTrash />
               </button>
 
               <button
@@ -68,7 +68,7 @@ function CFacQuery() {
                   })
                 }}
               >
-                <FaRandom />
+                <BiShuffle />
               </button>
             </div>
           </CFCardDrag>
