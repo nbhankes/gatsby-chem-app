@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   width: 20rem;
-  margin: 0rem 2rem;
+  margin: 0.25rem 2rem;
   background-color: white;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
