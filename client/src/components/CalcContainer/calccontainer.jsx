@@ -11,14 +11,19 @@ export default function CalcContainer(props) {
 
   const itemDropped = item => setItems([...items, item])
 
-  const numArg = [1]
-
-  const numArr = [1, 1, items.map(item => item.num * Math.pow(10, item.numExp))]
-
-  const numProduct = numArr.reduce((a, b) => a * b)
+  const numValue = items.map(item => item.num)
 
   {
     /*
+  const numExpValue = items.map(item => item.numExp)
+
+  const numTimesNumExpValue = numValue * Math.pow(10, numExpValue)
+
+  const numArr = [numTimesNumExpValue]
+
+  const numProduct = numArr.reduce((a, b) => a * b)
+
+
   const numExpArr = items.map(item => item.numExp)
  
   const numUnitArr = items.map(item => item.numUnit)
@@ -58,9 +63,7 @@ export default function CalcContainer(props) {
           ))}
         </div>
       </CalcContainerDropTarget>
-      <output className="calc-output">
-        {"numProduct:" + numProduct + " " + "numArr:" + numArr}
-      </output>
+      <output className="calc-output">{"numProduct:" + numValue}</output>
     </div>
   )
 }
