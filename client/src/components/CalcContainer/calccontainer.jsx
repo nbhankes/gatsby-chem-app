@@ -11,33 +11,85 @@ export default function CalcContainer(props) {
 
   const itemDropped = item => setItems([...items, item])
 
-  const numValue = items.map(item => item.num)
+  const numArrayInit = [1]
+  const numExpArrayInit = [""]
 
-  {
-    /*
-  const numExpValue = items.map(item => item.numExp)
+  //All numerators in an array
+  const numArray = [...numArrayInit, items.map(item => item.num)]
+  console.log("numArray:" + numArray)
+  //All numerator exponents in an array
+  const numExpArray = [...numExpArrayInit, items.map(item => item.numExp)]
+  console.log("numExpArray" + numExpArray)
+  //All numerator exponents in an array with blank entries removed
+  let numExpArrayFiltered = numExpArray.filter(Boolean)
+  console.log("numExpArrayFiltered" + numExpArrayFiltered)
 
-  const numTimesNumExpValue = numValue * Math.pow(10, numExpValue)
+  let numExpArrayFilteredRaised = [""]
 
-  const numArr = [numTimesNumExpValue]
-
-  const numProduct = numArr.reduce((a, b) => a * b)
-
-
-  const numExpArr = items.map(item => item.numExp)
- 
-  const numUnitArr = items.map(item => item.numUnit)
-
-  const numCompArr = items.map(item => item.numComp)
-
-  const denomArr = items.map(item => item.denom)
-
-  const denomExpArr = items.map(item => item.denomExp)
-
-  const denomUnitArr = items.map(item => item.denomUnit)
-
-  const denomCompArr = items.map(item => item.denomComp) */
+  if (numExpArrayFiltered.length > 0) {
+    numExpArrayFilteredRaised = numExpArrayFiltered.map(item =>
+      Math.pow(10, item)
+    )
+  } else {
+    numExpArrayFilteredRaised = [1]
   }
+
+  console.log("numExpArrayFilteredRaised" + numExpArrayFilteredRaised)
+  //Multiplying all numerator and numerator Exponent values together
+  const reducer = (accumulator, currentValue) => accumulator * currentValue
+
+  let numProduct = numArray.reduce(reducer)
+
+  let numExpProduct
+
+  if (numExpArrayFiltered.length > 0) {
+    numExpProduct = numExpArrayFilteredRaised.reduce(reducer)
+  } else {
+    numExpProduct = 1
+  }
+  console.log("numProduct" + numProduct)
+  console.log("numExpProduct" + numExpProduct)
+  let finalNumProduct = numProduct * numExpProduct
+  console.log("finalNumProduct" + finalNumProduct)
+
+  //All numerator units in an array
+  const numUnitArray = items.map(item => item.numUnit)
+  console.log(numUnitArray)
+
+  //All numerator components in an array
+  const numCompArray = items.map(item => item.numComp)
+
+  //All numerator components in an array with blank entries removed
+  const numCompArrayFiltered = numCompArray.filter(item => item.length > 0)
+  console.log(numCompArrayFiltered)
+
+  //All denominator values in an array
+  const denomArray = items.map(item => item.denom)
+  console.log(denomArray)
+
+  //All denominator exponent values in an array
+  const denomExpArray = items.map(item => item.denomExp)
+
+  //All denominator exponent values in an array with blank entries removed
+  const denomExpArrayFiltered = denomExpArray.filter(item => item.length > 0)
+
+  //All filtered denominator exponents in an array and multiplied to E ^ Exp
+  const denomExpArrayFilteredRaised = denomExpArrayFiltered.map(item =>
+    Math.pow(10, item)
+  )
+  console.log(denomExpArrayFilteredRaised)
+
+  //All denominator units in an array
+  const denomUnitArray = items.map(item => item.denomUnit)
+  console.log(denomUnitArray)
+  //All denominator components in an array
+  const denomCompArray = items.map(item => item.denomComp)
+
+  //All denominator components in an array with blank entries removed
+  const denomCompArrayFiltered = denomCompArray.filter(item => item.length > 0)
+  console.log(denomCompArrayFiltered)
+
+  //const numValue = items.map(item => item.num)
 
   return (
     <div>
@@ -63,7 +115,7 @@ export default function CalcContainer(props) {
           ))}
         </div>
       </CalcContainerDropTarget>
-      <output className="calc-output">{"numProduct:" + numValue}</output>
+      <output className="calc-output">{finalNumProduct}</output>
     </div>
   )
 }
