@@ -21,7 +21,14 @@ export default function CalcContainer(props) {
   const numExpArray = [...numExpArrayInit, items.map(item => item.numExp)]
   console.log("numExpArray" + numExpArray)
   //All numerator exponents in an array with blank entries removed
-  let numExpArrayFiltered = numExpArray.filter(Boolean)
+
+  //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
+  //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
+  //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
+  //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
+  //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
+  const numExpArrayFiltered = numExpArray.filter(item => (item = Boolean))
+
   console.log("numExpArrayFiltered" + numExpArrayFiltered)
 
   let numExpArrayFilteredRaised = [""]
@@ -38,6 +45,11 @@ export default function CalcContainer(props) {
   //Multiplying all numerator and numerator Exponent values together
   const reducer = (accumulator, currentValue) => accumulator * currentValue
 
+  //reduce producing NaN
+  //reduce producing NaN
+  //reduce producing NaN
+  //reduce producing NaN
+  //reduce producing NaN
   let numProduct = numArray.reduce(reducer)
 
   let numExpProduct
