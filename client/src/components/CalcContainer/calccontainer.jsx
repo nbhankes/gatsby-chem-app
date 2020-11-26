@@ -27,9 +27,9 @@ export default function CalcContainer(props) {
   //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
   //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
   //numExpArrayFiltered .filter method is not filtering all blank values, producing NaN
-  const numExpArrayFiltered = numExpArray.filter(item => (item = Boolean))
+  const numExpArrayFiltered = numExpArray.filter(item => item.length > 0)
 
-  console.log("numExpArrayFiltered" + numExpArrayFiltered)
+  console.log("numExpArrayFiltered: " + numExpArrayFiltered)
 
   let numExpArrayFilteredRaised = [""]
 
@@ -41,7 +41,7 @@ export default function CalcContainer(props) {
     numExpArrayFilteredRaised = [1]
   }
 
-  console.log("numExpArrayFilteredRaised" + numExpArrayFilteredRaised)
+  console.log("numExpArrayFilteredRaised: " + numExpArrayFilteredRaised)
   //Multiplying all numerator and numerator Exponent values together
   const reducer = (accumulator, currentValue) => accumulator * currentValue
 
@@ -59,25 +59,25 @@ export default function CalcContainer(props) {
   } else {
     numExpProduct = 1
   }
-  console.log("numProduct" + numProduct)
-  console.log("numExpProduct" + numExpProduct)
+  console.log("numProduct: " + numProduct)
+  console.log("numExpProduct: " + numExpProduct)
   let finalNumProduct = numProduct * numExpProduct
-  console.log("finalNumProduct" + finalNumProduct)
+  console.log("finalNumProduct: " + finalNumProduct)
 
   //All numerator units in an array
   const numUnitArray = items.map(item => item.numUnit)
-  console.log(numUnitArray)
+  console.log("numUnitArray: " + numUnitArray)
 
   //All numerator components in an array
   const numCompArray = items.map(item => item.numComp)
 
   //All numerator components in an array with blank entries removed
   const numCompArrayFiltered = numCompArray.filter(item => item.length > 0)
-  console.log(numCompArrayFiltered)
+  console.log("numCompArrayFiltered " + numCompArrayFiltered)
 
   //All denominator values in an array
   const denomArray = items.map(item => item.denom)
-  console.log(denomArray)
+  console.log("denomArray: " + denomArray)
 
   //All denominator exponent values in an array
   const denomExpArray = items.map(item => item.denomExp)
@@ -89,17 +89,17 @@ export default function CalcContainer(props) {
   const denomExpArrayFilteredRaised = denomExpArrayFiltered.map(item =>
     Math.pow(10, item)
   )
-  console.log(denomExpArrayFilteredRaised)
+  console.log("denomExpArrayFilteredRaised: " + denomExpArrayFilteredRaised)
 
   //All denominator units in an array
   const denomUnitArray = items.map(item => item.denomUnit)
-  console.log(denomUnitArray)
+  console.log("denomUnitArray: " + denomUnitArray)
   //All denominator components in an array
   const denomCompArray = items.map(item => item.denomComp)
 
   //All denominator components in an array with blank entries removed
   const denomCompArrayFiltered = denomCompArray.filter(item => item.length > 0)
-  console.log(denomCompArrayFiltered)
+  console.log("denomCompArrayFiltered: " + denomCompArrayFiltered)
 
   //const numValue = items.map(item => item.num)
 
@@ -127,7 +127,7 @@ export default function CalcContainer(props) {
           ))}
         </div>
       </CalcContainerDropTarget>
-      <output className="calc-output">{finalNumProduct}</output>
+      <output className="calc-output">{numExpArrayFiltered}</output>
     </div>
   )
 }
