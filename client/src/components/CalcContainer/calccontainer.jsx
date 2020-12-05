@@ -190,7 +190,7 @@ export default function CalcContainer(props) {
   ) {
     denomUnitFinal = denomUnitUnique[0] + three
   } else {
-    denomUnitFinal = "Check your units, mate."
+    denomUnitFinal = ""
   }
 
   // Handling Components
@@ -218,13 +218,15 @@ export default function CalcContainer(props) {
     numCompUnique.length === 2 &&
     numCompUnique[0] === numCompUnique[1]
   ) {
-    numCompFinal = numCompUnique[0] + two
+    numCompFinal = numCompUnique[0]
   } else if (
     numCompUnique.length === 3 &&
     numCompUnique[0] === numCompUnique[1] &&
     numCompUnique[1] === numCompUnique[2]
   ) {
-    numCompFinal = numCompUnique[0] + three
+    numCompFinal = numCompUnique[0]
+  } else {
+    numCompFinal = ""
   }
 
   const denomCompUnique = denomCompUniqueUnfiltered.filter(
@@ -239,13 +241,32 @@ export default function CalcContainer(props) {
     denomCompUnique.length === 2 &&
     denomCompUnique[0] === denomCompUnique[1]
   ) {
-    denomCompFinal = denomCompUnique[0] + two
+    denomCompFinal = denomCompUnique[0]
   } else if (
     denomCompUnique.length === 3 &&
     denomCompUnique[0] === denomCompUnique[1] &&
     denomCompUnique[1] === denomCompUnique[2]
   ) {
-    denomCompFinal = denomCompUnique[0] + three
+    denomCompFinal = denomCompUnique[0]
+  } else {
+    denomCompFinal = ""
+  }
+
+  let output
+
+  if (numArray == "1" && numExpArray == "") {
+    output = "Drag and drop to begin."
+  } else {
+    output =
+      finalValue +
+      " " +
+      numUnitFinal +
+      " " +
+      numCompFinal +
+      " per " +
+      denomUnitFinal +
+      " " +
+      denomCompFinal
   }
 
   return (
@@ -272,17 +293,7 @@ export default function CalcContainer(props) {
           ))}
         </div>
       </CalcContainerDropTarget>
-      <output className="calc-output">
-        {finalValue +
-          " " +
-          numUnitFinal +
-          " " +
-          numCompFinal +
-          " per " +
-          denomUnitFinal +
-          " " +
-          denomCompFinal}
-      </output>
+      <output className="calc-output">{output}</output>
     </div>
   )
 }

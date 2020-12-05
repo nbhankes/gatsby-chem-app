@@ -113,7 +113,6 @@ function CFactorForm() {
             className="num-comp"
             aria-label="Conversion Factor Numerator Compound, example: Nitrogen"
             placeholder="Nitrogen"
-            required
             // onChange={event => setNumComp(event.target.value)}
             onChange={handleChange}
           />
@@ -128,7 +127,6 @@ function CFactorForm() {
             className="denom"
             aria-label="Conversion Factor Denomenator value, a number"
             placeholder="14.0067"
-            required
             // onChange={event => setDenom(event.target.value)}
             onChange={handleChange}
           />
@@ -154,7 +152,6 @@ function CFactorForm() {
             className="denom-unit"
             aria-label="Conversion Factor Denomenator Units, example: grams"
             placeholder="grams"
-            required
             // onChange={event => setDenomUnit(event.target.value)}
             onChange={handleChange}
           />
@@ -167,7 +164,6 @@ function CFactorForm() {
             className="denom-comp"
             aria-label="Conversion Factor Denomenator Compound, example: Nitrogen"
             placeholder="Nitrogen"
-            required
             onChange={handleChange}
             // onChange={event => setDenomComp(event.target.value)}
           />
