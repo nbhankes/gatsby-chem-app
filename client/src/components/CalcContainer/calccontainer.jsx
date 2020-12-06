@@ -254,8 +254,10 @@ export default function CalcContainer(props) {
 
   let output
 
-  if (numArray == "1" && numExpArray == "") {
+  if (numArray.length == 1 && numExpArray == "") {
     output = "Drag and drop to begin."
+  } else if (numArray.length > 1 && denomUnitFinal == "") {
+    output = finalValue + " " + numUnitFinal + " " + numCompFinal
   } else {
     output =
       finalValue +
@@ -293,7 +295,18 @@ export default function CalcContainer(props) {
           ))}
         </div>
       </CalcContainerDropTarget>
-      <output className="calc-output">{output}</output>
+      <div className="ouput-and-sig-fig-container">
+        <div className="sig-fig-input-with-label-container">
+          <div className="sig-fig-label-text">Sig Figs:</div>
+          <input
+            className="sig-fig-input"
+            type="number"
+            placeholder="3"
+            min="0"
+          ></input>
+        </div>
+        <output className="calc-output">{output}</output>
+      </div>
     </div>
   )
 }
