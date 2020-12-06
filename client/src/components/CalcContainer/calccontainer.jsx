@@ -2,7 +2,7 @@ import React from "react"
 import CalcContainerDropTarget from "../CalcContainer/CalcContainerDropTarget"
 import "./calcContainer.css"
 
-// card formatting comes from cfCard.css
+//! card formatting comes from cfCard.css
 
 export default function CalcContainer(props) {
   const [items, setItems] = React.useState([])
@@ -12,20 +12,14 @@ export default function CalcContainer(props) {
   let numArrayInit = [1]
   let numExpArrayInit = [""]
 
-  //All numerators in an array
+  //?All numerators in an array
   let numArray = [...numArrayInit, ...items.map(item => item.num)]
 
-  //console.log("numArray:" + numArray)
-  //All numerator exponents in an array
+  //?All numerator exponents in an array
   let numExpArray = [...numExpArrayInit, ...items.map(item => item.numExp)]
 
-  //console.log("numExpArray: " + numExpArray)
-  //console.log("numExpArray is array? " + Array.isArray(numExpArray))
-
-  //All numerator exponents in an array with blank entries removed
+  //?All numerator exponents in an array with blank entries removed
   let numExpArrayFiltered = numExpArray.filter(item => item.length > 0)
-
-  //console.log("numExpArrayFiltered: " + numExpArrayFiltered)
 
   let numExpArrayFilteredRaised = [""]
 
@@ -37,64 +31,54 @@ export default function CalcContainer(props) {
     numExpArrayFilteredRaised = [1]
   }
 
-  console.log("numExpArrayFilteredRaised: " + numExpArrayFilteredRaised)
-
-  //All numerator units in an array
+  //?All numerator units in an array
   const numUnitArray = items.map(item => item.numUnit)
-  console.log("numUnitArray: " + numUnitArray)
 
-  //All numerator components in an array
+  //?All numerator components in an array
   const numCompArray = items.map(item => item.numComp)
 
-  //All numerator components in an array with blank entries removed
+  //?All numerator components in an array with blank entries removed
   const numCompArrayFiltered = numCompArray.filter(item => item.length > 0)
-  //console.log("numCompArrayFiltered " + numCompArrayFiltered)
 
-  //Setting up to work with the denominator numbers
+  //?Setting up to work with the denominator numbers
   let denomArrayInit = [1]
   let denomExpArrayInit = [""]
 
-  //All denominator values in an array
+  //?All denominator values in an array
   const denomArray = [...denomArrayInit, ...items.map(item => item.denom)]
-  //console.log("denomArray: " + denomArray)
 
-  //All numerator components in an array with blank entries removed
+  //?All numerator components in an array with blank entries removed
   const denomArrayFiltered = denomArray.filter(item => item.length > 0)
 
-  //All denominator exponent values in an array
+  //?All denominator exponent values in an array
   const denomExpArray = [
     ...denomExpArrayInit,
     ...items.map(item => item.denomExp),
   ]
 
-  //All denominator exponent values in an array with blank entries removed
+  //?All denominator exponent values in an array with blank entries removed
   const denomExpArrayFiltered = denomExpArray.filter(item => item.length > 0)
 
-  //All filtered denominator exponents in an array and multiplied to E ^ Exp
+  //?All filtered denominator exponents in an array and multiplied to E ^ Exp
   const denomExpArrayFilteredRaised = denomExpArrayFiltered.map(item =>
     Math.pow(10, item)
   )
-  //console.log("denomExpArrayFilteredRaised: " + denomExpArrayFilteredRaised)
 
-  //All denominator units in an array
+  //?All denominator units in an array
   const denomUnitArray = items.map(item => item.denomUnit)
-  //console.log("denomUnitArray: " + denomUnitArray)
 
-  //Removes all empty values from denom units array
+  //?Removes all empty values from denom units array
   const denomUnitArrayFiltered = denomUnitArray.filter(item => item.length > 0)
 
-  //All denominator components in an array
+  //?All denominator components in an array
   const denomCompArray = items.map(item => item.denomComp)
 
-  //All denominator components in an array with blank entries removed
+  //?All denominator components in an array with blank entries removed
   const denomCompArrayFiltered = denomCompArray.filter(item => item.length > 0)
-  //console.log("denomCompArrayFiltered: " + denomCompArrayFiltered)
 
-  //const numValue = items.map(item => item.num)
-
-  //Multiplying all numerator and numerator Exponent values together
-  //This yields the final numerator product, whcih will be used to
-  //calculate the final value
+  //?Multiplying all numerator and numerator Exponent values together
+  //?This yields the final numerator product, whcih will be used to
+  //?calculate the final value
   const reducer = (accumulator, currentValue) => accumulator * currentValue
 
   let numProduct = numArray.reduce(reducer)
@@ -109,9 +93,9 @@ export default function CalcContainer(props) {
 
   const finalNumProduct = numProduct * numExpProduct
 
-  //Multiplying all denominator and denominator exponent values together
-  //This yields the final numerator product, whcih will be used to
-  //calculate the final value
+  //?Multiplying all denominator and denominator exponent values together
+  //?This yields the final numerator product, whcih will be used to
+  //?calculate the final value
   let denomProduct
 
   if (denomArrayFiltered.length > 0) {
@@ -130,10 +114,27 @@ export default function CalcContainer(props) {
 
   const finalDenomProduct = denomProduct * denomExpProduct
 
-  //Final calculated value
-  const finalValue = finalNumProduct / finalDenomProduct
+  //!Final calculated value
+  //let n = 2
 
-  //Handling Units Finds Values unique to numerator and then
+  const [sigFig, setSigFigState] = React.useState(2)
+
+  let finalValueBeforeSigFig = finalNumProduct / finalDenomProduct
+
+  console.log("Final Value is:" + typeof finalValueBeforeSigFig)
+
+  let finalValue
+
+  if (finalValueBeforeSigFig < 9999) {
+    finalValue = Number.parseFloat(finalValueBeforeSigFig)
+      .toFixed(sigFig)
+      .toString()
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+  } else if (finalValueBeforeSigFig > 9999) {
+    finalValue = finalValueBeforeSigFig.toExponential(sigFig)
+  }
+
+  //?Handling Units Finds Values unique to numerator and then
   const numUnitUniqueUnfiltered = numUnitArray
   const denomUnitUniqueUnfiltered = denomUnitArray
 
@@ -167,7 +168,7 @@ export default function CalcContainer(props) {
   ) {
     numUnitFinal = numUnitUnique[0] + three
   } else {
-    numUnitFinal = "Check your units, mate."
+    numUnitFinal = ""
   }
 
   let denomUnitUnique = denomUnitUniqueUnfiltered.filter(
@@ -193,7 +194,7 @@ export default function CalcContainer(props) {
     denomUnitFinal = ""
   }
 
-  // Handling Components
+  //? Handling Components
   const numCompUniqueUnfiltered = numCompArrayFiltered
   const denomCompUniqueUnfiltered = denomCompArrayFiltered
 
@@ -254,9 +255,9 @@ export default function CalcContainer(props) {
 
   let output
 
-  if (numArray.length == 1 && numExpArray == "") {
+  if (numArray.length === 1 && numExpArray.length === 1) {
     output = "Drag and drop to begin."
-  } else if (numArray.length > 1 && denomUnitFinal == "") {
+  } else if (numArray.length > 1 && denomUnitFinal === "") {
     output = finalValue + " " + numUnitFinal + " " + numCompFinal
   } else {
     output =
@@ -302,6 +303,7 @@ export default function CalcContainer(props) {
             className="sig-fig-input"
             type="number"
             placeholder="3"
+            onChange={event => setSigFigState(event.target.value)}
             min="0"
           ></input>
         </div>
