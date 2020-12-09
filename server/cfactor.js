@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 const cfSchema = new Schema(
   {
     num: {
@@ -16,11 +16,11 @@ const cfSchema = new Schema(
     },
     numComp: {
       type: String,
-      required: true,
+      required: false,
     },
     denom: {
       type: String,
-      required: true,
+      required: false,
     },
     denomExp: {
       type: String,
@@ -28,11 +28,11 @@ const cfSchema = new Schema(
     },
     denomUnit: {
       type: String,
-      required: true,
+      required: false,
     },
     denomComp: {
       type: String,
-      required: true,
+      required: false,
     },
     cfLabel: {
       type: String,
@@ -46,7 +46,7 @@ const cfSchema = new Schema(
   {
     timestamps: true,
   }
-);
-var CFactors = mongoose.model("CFactor", cfSchema);
+)
+var CFactors = mongoose.model("CFactor", cfSchema)
 
-module.exports = { CFactors, cfSchema };
+module.exports = { CFactors, cfSchema }

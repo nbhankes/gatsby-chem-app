@@ -1,12 +1,11 @@
 .nav-banner {
   position: fixed;
   top: 4rem;
-  left: 0;
   z-index: 9998;
   display: flex;
   justify-content: space-around;
   background: var(--main-white);
-  width: 100%;
+  width: var(--page-width);
   margin: 0 auto;
 }
 
@@ -21,8 +20,8 @@
   font-size: 1.1rem;
   font-weight: 800;
   border-bottom: solid;
-  border-bottom-color: var(--statue-gray);
-  border-bottom-width: 0.15rem;
+  border-color: var(--statue-gray);
+  border-width: 0.15rem;
 }
 
 .nav-button:hover {

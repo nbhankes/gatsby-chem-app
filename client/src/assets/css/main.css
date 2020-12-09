@@ -2,20 +2,22 @@
 
 :root {
   --main-white: #ffffff;
+  --light-blue: #ebf5fe;
+  --md-blue: #9cd1fa;
   --twitter-blue: #1ea1f3;
   --light-blue: #ebf5fe;
   --statue-gray: #e6ecf0;
   --nobel-gray: #657786;
-  --light-nobel-gray: ##969595;
+  --light-nobel-gray: #969595;
   --transparent-2-black: rgba(0, 0, 0, 0.2);
   --transparent-5-black: rgba(0, 0, 0, 0.5);
   --main-black: #000000;
-  --page-width: 1200px;
+  --page-width: 100%;
 }
 html {
   font-size: 16px;
   width: var(--page-width);
-  margin: 9rem auto 0 auto;
+  margin: 7.9rem auto 0 auto;
 }
 
 body {
@@ -25,10 +27,8 @@ body {
   font-size: 0.9375rem; /*15px*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
   font-weight: 400;
   line-height: 29px;
-  overflow-scrolling: touch;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
@@ -40,6 +40,10 @@ h5,
 h6 {
   color: var(--hash-flag-blue);
   font-family: "Roboto Slab", serif;
+}
+
+.wrapper {
+  width: 100%;
 }
 
 .font-alt {

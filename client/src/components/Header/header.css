@@ -1,14 +1,13 @@
 .header-banner {
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 9999;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--main-white);
   color: var(--main-black);
-  width: 100%;
+  width: var(--page-width);
   margin: 0 auto;
   padding: 0.5rem 2rem;
 }
