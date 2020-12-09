@@ -302,7 +302,7 @@ export default function CalcContainer(props) {
           <input
             className="sig-fig-input"
             type="number"
-            placeholder="3"
+            placeholder="2"
             onChange={event => setSigFigState(event.target.value)}
             min="0"
           ></input>
