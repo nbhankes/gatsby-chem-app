@@ -1,5 +1,5 @@
-const { gql, makeExecutableSchema } = require("apollo-server-express");
-const CFactor = require("./cfactor").CFactors;
+const { gql, makeExecutableSchema } = require("apollo-server-express")
+const CFactor = require("./cfactor").CFactors
 
 const typeDefs = gql`
   type CFactor {
@@ -19,6 +19,7 @@ const typeDefs = gql`
     getCFactors: [CFactor]
     getCFactor(id: ID!): CFactor
   }
+
   type Mutation {
     createCFactor(
       cfLabel: String!
@@ -35,15 +36,15 @@ const typeDefs = gql`
     reverseCFactor(id: ID!): CFactor
     deleteCFactor(id: ID!): CFactor
   }
-`;
+`
 
 const resolvers = {
   Query: {
     getCFactors: (parent, args) => {
-      return CFactor.find({});
+      return CFactor.find({})
     },
     getCFactor: (parent, args) => {
-      return CFactor.findById((variables = args.id));
+      return CFactor.findById((variables = args.id))
     },
   },
   Mutation: {
@@ -60,40 +61,38 @@ const resolvers = {
         denomComp: args.denomComp,
         cfLabel: args.cfLabel,
         cfLibrary: args.cfLibrary,
-      });
-      return newCFactor.save();
-    },
-    reverseCFactor: (parent, args) => {
-      //if (!args.id) return;
-      return CFactor.findOneAndUpdate(
-        {
-          _id: args.id,
-        },
-        {
-          $rename: {
-            num: "denomTemp",
-            numExp: "denomExpTemp",
-            numUnit: "denomUnitTemp",
-            numComp: "denomCompTemp",
-            denom: "num",
-            denomExp: "numExp",
-            denomUnit: "numUnit",
-            denomComp: "numComp",
-            denomTemp: "denom",
-            denomExpTemp: "denomExp",
-            denomUnitTemp: "denomUnit",
-            denomCompTemp: "denomComp",
-          },
-        }
-      );
+      })
+      return newCFactor.save()
     },
     deleteCFactor: async (parent, args) => {
-      return await CFactor.findByIdAndRemove(args.id);
+      return await CFactor.findByIdAndRemove(args.id)
     },
+
+    //reverseCFactor: (parent, args) => {
+    //if (!args.id) return;
+    // return CFactor.findOneAndUpdate(
+    //    {
+    //      _id: args.id,
+    //    },
+    //   {
+    //      $rename: {
+    //        num: "denomTemp",
+    //        numExp: "denomExpTemp",
+    //        numUnit: "denomUnitTemp",
+    //        numComp: "denomCompTemp",
+    //        denom: "num",
+    //        denomExp: "numExp",
+    //        denomUnit: "numUnit",
+    //        denomComp: "numComp",
+    //        denomTemp: "denom",
+    //        denomExpTemp: "denomExp",
+    //        denomUnitTemp: "denomUnit",
+    //        denomCompTemp: "denomComp",
+    //       },
   },
-};
+}
 
 module.exports = makeExecutableSchema({
   typeDefs: [typeDefs],
   resolvers: resolvers,
-});
+})

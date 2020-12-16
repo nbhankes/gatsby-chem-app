@@ -1,4 +1,5 @@
 import React from "react"
+import Decimal from "decimal.js"
 import CalcContainerDropTarget from "../CalcContainer/CalcContainerDropTarget"
 import "./calcContainer.css"
 
@@ -25,7 +26,7 @@ export default function CalcContainer(props) {
 
   if (numExpArrayFiltered.length > 0) {
     numExpArrayFilteredRaised = numExpArrayFiltered.map(item =>
-      Math.pow(10, item)
+      Decimal.pow(10, item)
     )
   } else {
     numExpArrayFilteredRaised = [1]
@@ -81,17 +82,17 @@ export default function CalcContainer(props) {
   //?calculate the final value
   const reducer = (accumulator, currentValue) => accumulator * currentValue
 
-  let numProduct = numArray.reduce(reducer)
+  let numProduct = new Decimal(numArray.reduce(reducer))
 
   let numExpProduct = 1
 
   if (numExpArrayFiltered.length > 0) {
-    numExpProduct = numExpArrayFilteredRaised.reduce(reducer)
+    numExpProduct = new Decimal(numExpArrayFilteredRaised.reduce(reducer))
   } else {
     numExpProduct = 1
   }
 
-  const finalNumProduct = numProduct * numExpProduct
+  const finalNumProduct = new Decimal(numProduct * numExpProduct)
 
   //?Multiplying all denominator and denominator exponent values together
   //?This yields the final numerator product, whcih will be used to
@@ -112,26 +113,31 @@ export default function CalcContainer(props) {
     denomExpProduct = 1
   }
 
-  const finalDenomProduct = denomProduct * denomExpProduct
+  const finalDenomProduct = new Decimal(denomProduct * denomExpProduct)
 
   //!Final calculated value
   //let n = 2
 
-  const [sigFig, setSigFigState] = React.useState(2)
+  const [sigFig, setSigFigState] = React.useState(3)
 
-  let finalValueBeforeSigFig = finalNumProduct / finalDenomProduct
+  let finalValueBeforeSigFig = new Decimal(finalNumProduct / finalDenomProduct)
 
   console.log("Final Value is:" + typeof finalValueBeforeSigFig)
 
   let finalValue
+  let x
+  let finalValueConvert
 
+  ////!Write code to add zeros .concat()
   if (finalValueBeforeSigFig < 9999) {
-    finalValue = Number.parseFloat(finalValueBeforeSigFig)
+    finalValueConvert = Number.parseFloat(finalValueBeforeSigFig)
       .toFixed(sigFig)
       .toString()
       .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+    finalValue = new Decimal(finalValueConvert)
   } else if (finalValueBeforeSigFig > 9999) {
-    finalValue = finalValueBeforeSigFig.toExponential(sigFig)
+    let x = new Decimal(finalValueBeforeSigFig)
+    finalValue = new Decimal(x.toFixed(parseInt(sigFig)))
   }
 
   //?Handling Units Finds Values unique to numerator and then
@@ -302,7 +308,7 @@ export default function CalcContainer(props) {
           <input
             className="sig-fig-input"
             type="number"
-            placeholder="2"
+            placeholder="3"
             onChange={event => setSigFigState(event.target.value)}
             min="0"
           ></input>
