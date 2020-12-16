@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.development`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Dimensional Analysis Calculator`,
@@ -18,7 +22,7 @@ module.exports = {
       options: {
         dbName: `test`,
         collection: `cfactors`,
-        connectionString: `mongodb+srv://nbhankes:cbq6leONr6R0pGY9@appdb-qefed.azure.mongodb.net/test?retryWrites=true&w=majority`,
+        connectionString: `${process.env.GATSBY_APP_MONGODB_URI}`,
       },
     },
     `gatsby-transformer-sharp`,
