@@ -7,9 +7,8 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 
 const { ApolloServer } = require("apollo-server-express")
-const MONGODB_URI =
-  "mongodb+srv://nbhankes:cbq6leONr6R0pGY9@appdb-qefed.azure.mongodb.net/test?retryWrites=true&w=majority"
-//const MONGODB_URI = process.env.REACT_APP_MONGODB_URI;
+
+const MONGODB_URI = process.env.REACT_APP_MONGODB_URI
 
 const schema = require("./schema")
 
