@@ -2,7 +2,7 @@
 
 ### This project performs dimensional analysis calculations using conversion factors. That's scientist lingo for, this app allows you to change units around.
 
-[![MVP Screen Shot](https://i9.ytimg.com/vi/G74zKmIrcdY/mq2.jpg?sqp=CLTG7f4F&rs=AOn4CLAd-6VGySPps1QUpzfVFzwZfHiccQ)](https://www.youtube.com/watch?v=G74zKmIrcdY)
+[![MVP Screen Shot](https://res.cloudinary.com/practicaldev/image/fetch/s--hc2g2w_6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/j059adtc92md0dxamego.png)](https://www.youtube.com/watch?v=G74zKmIrcdY)
 
 This project is **unique** because the unit conversion software available on the market only allows you to use predetermined conversion factors. For instance, converting miles to kilometers. But this app allows users to add their own conversion factors.
 
