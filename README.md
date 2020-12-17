@@ -1,8 +1,8 @@
 ## 🧪 Welcome to my chemistry calculator! 🧪
 
-It's still under construction, and I'm learning as I go, so stop in periodically to check in on my progress. When I have a suitable MVP, I'll share the URL.
-
 ### This project performs dimensional analysis calculations using conversion factors. That's scientist lingo for, this app allows you to change units around.
+
+[![MVP Screen Shot](https://i9.ytimg.com/vi/G74zKmIrcdY/mq2.jpg?sqp=CLTG7f4F&rs=AOn4CLAd-6VGySPps1QUpzfVFzwZfHiccQ)](https://www.youtube.com/watch?v=G74zKmIrcdY)
 
 This project is **unique** because the unit conversion software available on the market only allows you to use predetermined conversion factors. For instance, converting miles to kilometers. But this app allows users to add their own conversion factors.
 
