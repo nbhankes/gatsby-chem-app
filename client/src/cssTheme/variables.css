@@ -1,0 +1,23 @@
+colors {
+  --red-salsa: #f94144ff;
+  --orange-red: #f3722cff;
+  --yellow-orange-color-wheel: #f8961eff;
+  --mango-tango: #f9844aff;
+  --maize-crayola: #f9c74fff;
+  --pistachio: #90be6dff;
+  --zomp: #43aa8bff;
+  --cadet-blue: #4d908eff;
+  --queen-blue: #577590ff;
+  --cg-blue: #277da1ff;
+
+  --red-salsa: hsla(359, 94%, 62%, 1);
+  --orange-red: hsla(21, 89%, 56%, 1);
+  --yellow-orange-color-wheel: hsla(33, 94%, 55%, 1);
+  --mango-tango: hsla(20, 94%, 63%, 1);
+  --maize-crayola: hsla(42, 93%, 64%, 1);
+  --pistachio: hsla(94, 38%, 59%, 1);
+  --zomp: hsla(162, 43%, 46%, 1);
+  --cadet-blue: hsla(178, 30%, 43%, 1);
+  --queen-blue: hsla(208, 25%, 45%, 1);
+  --cg-blue: hsla(198, 61%, 39%, 1);
+}
