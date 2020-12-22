@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => (
       <CFactorForm />
       <CalcContainer />
       <CFacQuery />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+      <Link to="/account/settings">My Account</Link>
     </Layout>
   </ApolloProvider>
 )

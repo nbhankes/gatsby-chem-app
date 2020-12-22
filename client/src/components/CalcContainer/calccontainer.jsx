@@ -122,7 +122,14 @@ export default function CalcContainer(props) {
 
   let finalValueBeforeSigFig = new Decimal(finalNumProduct / finalDenomProduct)
 
-  console.log("Final Value is:" + typeof finalValueBeforeSigFig)
+  //!Handling finalValue sigfigs
+  function customToFixed(val) {
+    let valueToArray = val.toString().split("")
+    let index = valueToArray.indexOf(".")
+    let decimalPlaces = valueToArray.length - parseInt(index) - 1
+
+    console.log("How many decimal places?:" + decimalPlaces)
+  }
 
   let finalValue
   let x
@@ -137,7 +144,8 @@ export default function CalcContainer(props) {
     finalValue = new Decimal(finalValueConvert)
   } else if (finalValueBeforeSigFig > 9999) {
     let x = new Decimal(finalValueBeforeSigFig)
-    finalValue = new Decimal(x.toFixed(parseInt(sigFig)))
+    //finalValue = new Decimal(x.toFixed(parseInt(sigFig)))
+    finalValue = customToFixed(x)
   }
 
   //?Handling Units Finds Values unique to numerator and then
